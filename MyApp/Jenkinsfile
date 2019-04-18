@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                bat "mvn clean /MyApp"
+                bat "mvn clean MyApp"
             }
         }
         stage('Test') {
             steps {
-                bat "mvn test /MyApp"
+                bat "mvn test MyApp"
             }
         }
         stage('Deploy') {
             steps {
-                bat "mvn package /MyApp"
+                bat "mvn package MyApp"
             }
         }
     }
