@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('clone') {
             steps {
-                bat "mvn clean jenkinstest/MyApp/pom.xml"
+                bat "mvn clean -f MyApp/pom.xml"
             }
         }
         stage('Test') {
             steps {
-                bat "mvn test jenkinstest/MyApp/pom.xml"
+                bat "mvn test -f MyApp/pom.xml"
             }
         }
         stage('Deploy') {
             steps {
-                bat "mvn package jenkinstest/MyApp/pom.xml"
+                bat "mvn package -f MyApp/pom.xml"
             }
         }
     }
